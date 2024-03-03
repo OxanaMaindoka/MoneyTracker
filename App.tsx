@@ -1,3 +1,4 @@
+/**Oxana Charlien Meylin Maindoka */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
