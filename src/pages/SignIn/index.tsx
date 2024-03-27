@@ -1,6 +1,6 @@
 import React from 'react';
 import {ScrollView, StyleSheet, View} from 'react-native';
-import {Button, Gap, PageHeader, TextInput} from '../../components';
+import {Button, Gap, PageHeader, TextInput, TextInputAT} from '../../components';
 
 const SignIn = ({navigation}) => {
   return (
@@ -16,7 +16,7 @@ const SignIn = ({navigation}) => {
         <Gap height={16} />
         <TextInput label="Password" placeholder="Type your password" />
         <Gap height={24} />
-        <Button label="Sign In" />
+        <Button label="Sign In" onPress={() => navigation.navigate('Home')} />
         <Gap height={12} />
         <Button
           label="Create New Account"

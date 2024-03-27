@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView, ScrollView } from 'react-native';
 import React, { useEffect } from 'react';
 import Logo from  '../../assets/icon/Logo.svg';
 

@@ -1,27 +1,36 @@
 import React from 'react';
-import {ScrollView, StyleSheet, View, Text, TouchableOpacity} from 'react-native';
-import {Button, Gap, PageHeader, TextInput} from '../../components';
+import {
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+  Text,
+} from 'react-native';
+import {Button, Gap, PageHeader, TextInput, TextInputAT} from '../../components';
 
 const SignUp = ({navigation}) => {
   return (
     <ScrollView style={styles.container}>
-      <PageHeader label="Sign Up" backButton={false} />
+      <PageHeader
+        label="Sign Up"
+        backButton
+        onPress={() => navigation.goBack()}
+      />
       <Gap height={24} />
       <View style={styles.contentWrapper}>
-        <Gap height={24} />
-        <View style={styles.photoContainer}>
-          <View style={styles.photoBorder}>
-            <TouchableOpacity style={styles.addPhotoButton}>
-              <Text>Add</Text>
-              <Text>Photo</Text>
-            </TouchableOpacity>
+        <Gap height={26} />
+        <View style={styles.profilePictureContainer}>
+          <View style={styles.profilePicture}>
+            <View style={styles.addPhotoContainer}>
+              <TouchableOpacity>
+                <Text style={styles.addPhoto}>Add Photo</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
-        <TextInput
-          label="Full Name"
-          placeholder="Type your full name"
-        />
-        <Gap height={16} />
+        <Gap height={24} />
+        <TextInput label="Full Name" placeholder="Type your full name" />
+        <Gap height={24} />
         <TextInput
           label="Email Address"
           placeholder="Type your email address"
@@ -29,8 +38,10 @@ const SignUp = ({navigation}) => {
         <Gap height={16} />
         <TextInput label="Password" placeholder="Type your password" />
         <Gap height={24} />
-        <Button label="Continue" />
-        <Gap height={12} />
+        <Button
+          label="Continue"
+          onSubmit={() => navigation.navigate('Home')}
+        />
       </View>
     </ScrollView>
   );
@@ -47,25 +58,31 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 24,
   },
-  photoContainer: {
-    alignItems: 'center',
-  },
-  photoBorder: {
-    borderStyle: 'dashed',
-    borderWidth: 4,
-    borderColor: '#F0F0F0',
-    width: 110,
+  profilePicture: {
     height: 110,
-    borderRadius: 100/2,
-    alignItems: 'center',
+    width: 110,
+    borderColor: '#8D92A3',
+    borderWidth: 1,
+    borderStyle: 'dashed',
+    borderRadius: 110 / 2,
     justifyContent: 'center',
+    alignItems: 'center',
   },
-  addPhotoButton: {
-    backgroundColor: '#F0F0F0',
-    width: 90,
-    height: 90,
-    borderRadius: 100/2,
+  profilePictureContainer: {
     alignItems: 'center',
+  },
+  addPhotoContainer: {
+    height: 90,
+    width: 90,
+    backgroundColor: '#F0F0F0',
+    borderRadius: 90 / 2,
     justifyContent: 'center',
+    alignItems: 'center',
+  },
+  addPhoto: {
+    fontFamily: 'Poppins-Light',
+    fontSize: 13,
+    width: 40,
+    textAlign: 'center',
   },
 });
