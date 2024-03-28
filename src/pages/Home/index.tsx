@@ -1,41 +1,48 @@
-import { StyleSheet, Text, View,Image } from 'react-native'
-import React from 'react'
-import { PageHeader,Button,Footer,Gap,Line } from '../../components';
+import React from 'react';
+import {
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+  Text,
+} from 'react-native';
+import {Button, Gap, PageHeader, TextInput, TextInputAT, Footer, Line} from '../../components';
 
 const Home = ({navigation}) => {
   return (
-    <View style = {styles.bodyView}>
-        <PageHeader title={"Money Tracker"} isProfile={true}/>
-        <View style = {styles.YBView}>
-            <Text style ={styles.txtStyle}>Your Balance</Text>
-            <Gap height={8}/>
-            <View style = {styles.moneyView}>
-                <Text style = {styles.moneyStyle}>Rp.10.000.000</Text>
-            </View>
-            <Line/>
-            <View style = {styles.cashOnView}>
-                <Text style = {styles.cashOntxt}>Cash on Hand</Text>
-                <Gap width={20}/>
-                <Text style = {styles.cashOn}>Rp.4.000.000</Text>
-            </View>
-            <Gap height={11}/>
-            <View style = {styles.cashOnView}>
-                <Text style = {styles.cashOntxt}>Cash on Bank</Text>
-                <Gap width={20}/>
-                <Text style = {styles.cashOn}>Rp.6.000.000</Text>
-            </View>
+    <View style={styles.bodyView}>
+      <PageHeader label="Money Tracker"/>
+      
+      <View style={styles.YBView}>
+        <Text style ={styles.txtStyle}>Your Balance</Text>
+        <Gap height={8} />
+        <View style = {styles.moneyView}>
+            <Text style = {styles.moneyStyle}> Rp.10.000.000</Text>
         </View>
-        <View style = {styles.ATView}>
+        <Line/>
+        <View style = {styles.cashOnView}>
+            <Text style = {styles.cashOntxt}>Cash on Hand</Text>
+            <Gap width={20}/>
+            <Text style = {styles.cashOn}>Rp.4.000.000</Text>
+        </View>
+        <Gap height={11}/>
+        <View style = {styles.cashOnView}>
+            <Text style = {styles.cashOntxt}>Cash on Bank</Text>
+            <Gap width={20}/>
+            <Text style = {styles.cashOn}>Rp.6.000.000</Text>
+        </View>
+      </View>
+      <View style = {styles.ATView}>
             <Text style ={styles.txtStyle}>Add Transaction</Text>
             <Gap height={25}/>
-            <Button text={'Cash On Hand'} onPress={()=>navigation.navigate('CashonHand')}/>
+            <Button label={'Cash On Hand'} onSubmit={()=>navigation.navigate('CashonHand')}/>
             <Gap height={18}/>
-            <Button text={'Cash On Bank'} onPress={()=>navigation.navigate('CashonBank')}/>
+            <Button label={'Cash On Bank'} onSubmit={()=>navigation.navigate('CashonBank')}/>
         </View>
         <Footer/>
     </View>
-  )
-}
+  );
+};
 
 export default Home;
 
@@ -69,10 +76,10 @@ const styles = StyleSheet.create({
     moneyStyle : {
         fontFamily : 'Poppins',
         fontStyle : 'normal',
-        fontWeight : 800,
+        fontWeight : '800',
         fontSize : 24,
         lineHeight : 36,
-        color : '#000000'
+        color : '#000000',
     },
 
     cashOnView : {
@@ -82,7 +89,7 @@ const styles = StyleSheet.create({
     cashOntxt : {
         fontFamily : 'Poppins',
         fontStyle : 'normal',
-        fontWeight : 500,
+        fontWeight : '500',
         fontSize : 16,
         lineHeight : 21,
 
@@ -92,7 +99,7 @@ const styles = StyleSheet.create({
     cashOn : {
         fontFamily : 'Poppins',
         fontStyle : 'normal',
-        fontWeight : 600,
+        fontWeight : '600',
         fontSize : 17,
         lineHeight : 21,
 
